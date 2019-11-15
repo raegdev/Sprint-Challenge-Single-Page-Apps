@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import CharacterList from "./CharacterList";
+
 
 export default function SearchForm() {
  
@@ -7,9 +7,11 @@ export default function SearchForm() {
 
       const [searchResults, setSearchResults] = useState([]);
 
+      const [chars, setChars] = useState([]);
+
       useEffect(() => {
         
-        const results = CharacterList.filter(character =>
+        const results = chars.filter(character =>
           
           character.toLowerCase().includes(search.toLowerCase())
         );

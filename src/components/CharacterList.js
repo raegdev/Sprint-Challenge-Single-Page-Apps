@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import CharacterCard from "./CharacterCard";
+import { Link } from 'react-router-dom';
 
 
 export default function CharacterList(props) {
@@ -16,7 +16,7 @@ export default function CharacterList(props) {
       axios
         .get('https://rickandmortyapi.com/api/character/')
         .then( resp => {
-          console.log(resp.data.results);
+          // console.log(resp.data.results);
           setChars(resp.data.results)
         })
         .catch( err => {
@@ -33,11 +33,24 @@ export default function CharacterList(props) {
       {chars.map(char => {
 
       return (
-        <CharacterCard key={char.id} name={char.name} species={char.species} status={char.status}/>
+        <CharDetails key={char.id} character={char}/>
       )
       })}
     </section>
   );
+}
 
+const CharDetails = (props) => {
+  const { name, species, status } = props.character;
+  console.log(props.character);
 
+  return (
+    <Link to = {`/chars/${props.character.id}`}>
+      <div className='character-card'>
+        <h2>{name}</h2>
+        Species: <em>{species}</em>
+        Status: <em>{status}</em>
+      </div>
+    </Link>
+  )
 }

@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function SearchForm() {
  
-  return (
-    <section className="search-form">
-
-      const [searchTerm, setSearchTerm] = useState("");
+      const [search, setSearch] = useState("");
 
       const [searchResults, setSearchResults] = useState([]);
 
@@ -13,14 +10,14 @@ export default function SearchForm() {
         
         const results = characters.filter(character =>
           
-          character.toLowerCase().includes(searchTerm.toLowerCase())
+          character.toLowerCase().includes(search.toLowerCase())
         );
 
         setSearchResults(results);
       }, [searchTerm]);
       
       const handleChange = e => {
-        setSearchTerm(e.target.value)
+        setSearch(e.target.value)
       };
       return (
         <div className="App">
@@ -45,8 +42,5 @@ export default function SearchForm() {
           </div>
         </div>
       );
-
-
-    </section>
-  );
+    
 }

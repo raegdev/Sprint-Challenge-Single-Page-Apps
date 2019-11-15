@@ -31,7 +31,6 @@ export default function CharacterList(props) {
     <section className="character-list">
       <h2>List of Characters</h2>
       {chars.map(char => {
-
       return (
         <CharDetails key={char.id} character={char}/>
       )

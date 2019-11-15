@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import CharacterList from "./CharacterList";
 
 export default function SearchForm() {
  
@@ -8,13 +9,13 @@ export default function SearchForm() {
 
       useEffect(() => {
         
-        const results = characters.filter(character =>
+        const results = CharacterList.filter(character =>
           
           character.toLowerCase().includes(search.toLowerCase())
         );
 
         setSearchResults(results);
-      }, [searchTerm]);
+      }, [search]);
       
       const handleChange = e => {
         setSearch(e.target.value)
@@ -30,7 +31,7 @@ export default function SearchForm() {
               name="textfield"
               placeholder="Search"
               onChange={handleChange}
-              value={searchTerm}
+              value={search}
             />
           </form>
           <div className="character-list">

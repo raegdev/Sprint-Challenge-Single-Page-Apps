@@ -1,11 +1,15 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import styled from 'styled-components';
 
+const Welcome = styled.section`
+  text-align:center;
+`  
 
 export default function WelcomePage() {
   return (
     <Router>
-      <section className="welcome-page">
+      <Welcome>
         <header>
           <h1>Welcome to the ultimate fan site!</h1>
 
@@ -15,7 +19,7 @@ export default function WelcomePage() {
               alt="rick"
             />
         </header>
-      </section>
+      </Welcome>
     </Router>
   );
 }

@@ -1,9 +1,16 @@
 import React from "react";
+import styled from 'styled-components';
+
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+  `;
 
 export default function Header() {
   return (
-    <header className="ui centered">
-      <h1 className="ui center">Rick &amp; Morty Fan Page</h1>
-    </header>
+    <Title>
+      <h1 className="ui center">Rick & Morty Fan Page</h1>
+    </Title>
   );
 }

@@ -3,12 +3,18 @@ import Header from "./components/Header.js";
 import CharacterList from './components/CharacterList';
 import WelcomePage from "./components/WelcomePage.js";
 import CharacterCard from './components/CharacterCard';
-import SearchForm from './components/SearchForm';
 import { Route } from 'react-router-dom';
+import styled from 'styled-components';
+
+const Main = styled.section`
+  padding: 4em;
+  margin: 5%;
+  background: papayawhip;
+`  
 
 export default function App() {
   return (
-    <main>
+    <Main>
       <Header />
       <WelcomePage />
       
@@ -17,6 +23,6 @@ export default function App() {
       <Route exact path='/chars/:id' component={CharacterList} />
       
       {/* <CharacterList /> */}
-    </main>
+    </Main>
   );
 }

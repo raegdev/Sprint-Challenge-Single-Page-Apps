@@ -11,7 +11,7 @@ export default function App() {
     <main>
       <Header />
       <WelcomePage />
-      <SearchForm />
+      
 
       <Route exact path='/' component={CharacterCard} />
       <Route exact path='/chars/:id' component={CharacterList} />

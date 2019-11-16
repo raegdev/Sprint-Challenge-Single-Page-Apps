@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import SearchForm from './SearchForm';
 
 
 export default function CharacterList(props) {
@@ -27,9 +28,19 @@ export default function CharacterList(props) {
     getChars();
   }, []);
 
+  const handleSearch = (input) => {
+    //helper function
+    setChars(
+      chars.filter((item) => {
+        return item.name.toLowerCase().includes(input.toLowerCase())
+      })
+    )
+  }
+
   return (
     <section className="character-list">
       <h2>List of Characters</h2>
+      <SearchForm handleSearch={handleSearch} />
       {chars.map(char => {
       return (
         <CharDetails key={char.id} character={char}/>
@@ -38,6 +49,8 @@ export default function CharacterList(props) {
     </section>
   );
 }
+
+
 
 const CharDetails = (props) => {
   const { name, species, status } = props.character;

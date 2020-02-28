@@ -23,7 +23,8 @@ export default function App() {
       
       <Route path='/'><WelcomePage/></Route>
       <Route path='/chars/'><CharacterList/></Route>
-
+      
+      {/* STRETCH */}
       <Route path='/location/'><LocationList/></Route>
       
       

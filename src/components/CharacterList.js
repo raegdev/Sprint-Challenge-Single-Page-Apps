@@ -15,7 +15,7 @@ export default function CharacterList(props) {
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
     const getChars = () => {
       axios
-        .get('https://rickandmortyapi.com/api/character/')
+        .get('https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/character/')
         .then( resp => {
           console.log(resp.data.results);
           setChars(resp.data.results)

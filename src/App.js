@@ -22,7 +22,7 @@ export default function App() {
       <Route exact path='/' component={CharacterCard} />
       <Route exact path='/chars/:id' component={CharacterList} />
       
-      {/* <CharacterList /> */}
+      <CharacterList />
     </Main>
   );
 }

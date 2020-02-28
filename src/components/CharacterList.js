@@ -52,15 +52,23 @@ export default function CharacterList(props) {
 
 
 
-const CharDetails = (props) => {
-  const { name, species, status } = props.character;
-  console.log(props.character);
+const CharDetails = ({character}) => {
+  const { name, species, status } = character;
+  console.log(character);
+
+  // const handleClick = (e) => {
+  //   e.preventDefault();
+  //   console.log('name clicked');
+
+    
+  // }
 
   return (
-    <Link to = {`/chars/${props.character.id}`}>
+    <Link to={`/chars/${character.id}`} >
       <div className='character-card'>
         <h2>{name}</h2>
         Species: <em>{species}</em>
+        <br></br>
         Status: <em>{status}</em>
       </div>
     </Link>

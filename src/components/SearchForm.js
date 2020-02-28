@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {CharDetails} from './CharacterList';
+// import {CharDetails} from './CharacterList';
 
 export default function SearchForm(props) {
  

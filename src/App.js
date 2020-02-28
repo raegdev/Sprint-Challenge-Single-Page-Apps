@@ -15,14 +15,15 @@ const Main = styled.section`
 export default function App() {
   return (
     <Main>
-      <Header />
-      <WelcomePage />
+      {/* <Header /> */}
+      {/* <WelcomePage />
+      <CharacterList /> */}
+      <Header/>
+      <Route path='/'><WelcomePage/></Route>
+      <Route path='/chars/'><CharacterList/></Route>
       
-
-      <Route exact path='/' component={CharacterCard} />
-      <Route exact path='/chars/:id' component={CharacterList} />
       
-      <CharacterList />
+      
     </Main>
   );
 }

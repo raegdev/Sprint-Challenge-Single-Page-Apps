@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Title = styled.h1`
@@ -10,7 +11,7 @@ const Title = styled.h1`
 export default function Header() {
   return (
     <Title>
-      <h1 className="ui center">Rick & Morty Fan Page</h1>
+      <Link to={`/`} style={{ textDecoration: 'none' }}>Rick & Morty Fan Page</Link>
     </Title>
   );
 }

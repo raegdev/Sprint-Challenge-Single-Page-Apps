@@ -25,6 +25,8 @@ export default function SearchForm(props) {
         setSearch(e.target.value)
         props.handleSearch(e.target.value)
       };
+
+      
       
       return (
         <div className="App">

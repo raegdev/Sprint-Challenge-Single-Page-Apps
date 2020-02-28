@@ -2,6 +2,18 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import SearchForm from './SearchForm';
+import styled from 'styled-components';
+import CharacterCard from './CharacterCard';
+
+const CharList = styled.section`
+
+  margin: 2%;
+  padding: 2%;
+  color: white;
+  border: 2px dotted yellow;
+  text-align: center;
+  background: green;
+`
 
 
 export default function CharacterList(props) {
@@ -64,13 +76,13 @@ const CharDetails = ({character}) => {
   // }
 
   return (
-    <Link to={`/chars/${character.id}`} >
-      <div className='character-card'>
+    <Link to={`/chars/${character.id}`} style={{ textDecoration: 'none' }}>
+      <CharList>
         <h2>{name}</h2>
         Species: <em>{species}</em>
         <br></br>
         Status: <em>{status}</em>
-      </div>
+      </CharList>
     </Link>
   )
 }

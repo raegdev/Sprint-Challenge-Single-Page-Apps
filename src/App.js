@@ -4,6 +4,7 @@ import CharacterList from './components/CharacterList';
 import WelcomePage from "./components/WelcomePage.js";
 import CharacterCard from './components/CharacterCard';
 import LocationList from './components/LocationsList';
+import EpisodeList from './components/EpisodeList';
 import { Route } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -23,9 +24,10 @@ export default function App() {
       
       <Route path='/'><WelcomePage/></Route>
       <Route path='/chars/'><CharacterList/></Route>
-      
+
       {/* STRETCH */}
       <Route path='/location/'><LocationList/></Route>
+      <Route path='/episode/'><EpisodeList/></Route>
       
       
       

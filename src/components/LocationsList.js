@@ -1,6 +1,17 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+
+const LocList = styled.section`
+
+  margin: 2%;
+  padding: 2%;
+  color: white;
+  border: 2px dotted yellow;
+  text-align: center;
+  background: green;`
+
 
 export default function LocationsList() {
     const [location, setLocation] = useState([]);
@@ -36,12 +47,12 @@ const LocationDetails = ({location}) => {
 
     return(
         <Link to={`/location/`} style={{ textDecoration: 'none' }}>
-            <section>
+            <LocList>
                 <h1>Name: {name}</h1>
                 <h4>Type: {type}</h4>
                 <h4>Dimension: {dimension}</h4>
                 {/* <h4>Residents: {residents}</h4> */}
-            </section>
+            </LocList>
         </Link>
     )
 }

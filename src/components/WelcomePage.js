@@ -22,6 +22,8 @@ export default function WelcomePage() {
             <Link to={`/chars/`} style={{ textDecoration: 'none' }}>Characters</Link>
             <br></br>
             <Link to={`/location/`} style={{ textDecoration: 'none' }}>Locations</Link>
+            <br></br>
+            <Link to={`/episode/`} style={{ textDecoration: 'none' }}>Episodes</Link>
         </header>
       </Welcome>
     

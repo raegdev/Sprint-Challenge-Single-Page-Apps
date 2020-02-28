@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Header.js";
 import CharacterList from './components/CharacterList';
 import WelcomePage from "./components/WelcomePage.js";
-import CharacterCard from './components/CharacterCard';
+import Character from './components/Character';
 import LocationList from './components/LocationsList';
 import EpisodeList from './components/EpisodeList';
 import { Route } from 'react-router-dom';
@@ -15,6 +15,13 @@ const Main = styled.section`
 `  
 
 export default function App() {
+
+  const [card, setCard] = useState( [] );
+
+  const newCard = cards => {
+    setCard( [...card, cards] );
+  };
+
   return (
     <Main>
       {/* <Header /> */}
@@ -22,8 +29,9 @@ export default function App() {
       <CharacterList /> */}
       <Header/>
       
-      <Route path='/'><WelcomePage/></Route>
-      <Route path='/chars/'><CharacterList/></Route>
+      <Route exact path='/'><WelcomePage/></Route>
+      <Route exact path='/chars/'><CharacterList/></Route>
+      <Route path='/chars/:id'><Character/></Route>
 
       {/* STRETCH */}
       <Route path='/location/'><LocationList/></Route>

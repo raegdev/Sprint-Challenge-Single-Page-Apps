@@ -55,7 +55,7 @@ export default function CharacterList(props) {
       <SearchForm handleSearch={handleSearch} />
       {chars.map(char => {
       return (
-        <CharDetails key={char.id} character={char}/>
+        <Link to={`/chars/${chars.id}`} style={{ textDecoration: 'none' }}><CharDetails key={char.id} character={char}/></Link>
       )
       })}
     </section>

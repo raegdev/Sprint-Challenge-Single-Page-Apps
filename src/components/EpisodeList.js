@@ -18,9 +18,9 @@ export default function EpisodeList() {
   useEffect(()=>{
     const getEpisode = () => {
       axios
-        .get('https://rickandmortyapi.com/api/episode/')
+        .get('https://cors-anywhere.herokuapp.com/https://rickandmortyapi.com/api/episode/')
         .then(resp => {
-          console.log(resp.data.results);
+          console.log('episodes',resp.data.results);
           setEpisode(resp.data.results)
         })
         .catch(err=>{
